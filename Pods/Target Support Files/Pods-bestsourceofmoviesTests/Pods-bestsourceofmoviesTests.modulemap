@@ -1,0 +1,6 @@
+framework module Pods_bestsourceofmoviesTests {
+  umbrella header "Pods-bestsourceofmoviesTests-umbrella.h"
+
+  export *
+  module * { export * }
+}
