@@ -7,12 +7,22 @@
 //
 
 import UIKit
+import SwiftyJSON
 
 class ViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+        let client = ApiClient();
+        
+        client.loadMovies(page: 1, completion: { [weak self] result in DispatchQueue.main.async {
+            switch result {
+            case .success(let data):
+                print(JSON(data))
+            case .failure(let error):
+                print(error);
+            } } });
     }
 
     override func didReceiveMemoryWarning() {
