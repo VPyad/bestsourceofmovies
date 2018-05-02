@@ -23,10 +23,9 @@ class ApiClient {
     let apiKey = "6ccd72a2a8fc239b13f209408fc31c33";
     let discoverPath = "discover/movie";
     let searchPath = "search/movie";
-    let baseImageUrl = "http://image.tmdb.org/t/p/w185";
+    public let baseImageUrl = "http://image.tmdb.org/t/p/w185";
     
     public func getPosterPath(path: String) -> String {
-        // TODO if path is null return path to default poster
         let url = baseImageUrl + path;
         return url;
     }

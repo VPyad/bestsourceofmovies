@@ -30,3 +30,5 @@ extension MoviePreview {
     @NSManaged public var voteAvg: Float
 
 }
+
+

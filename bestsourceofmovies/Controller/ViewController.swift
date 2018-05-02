@@ -14,15 +14,31 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
-        let client = ApiClient();
+        /*let client = ApiClient();
+        let pasrer = MovierParser();
         
-        client.loadMovies(page: 1, completion: { [weak self] result in DispatchQueue.main.async {
+        client.loadMovies(page: 1, completion: { result in DispatchQueue.main.async {
             switch result {
             case .success(let data):
-                print(JSON(data))
+                let moviesArray = pasrer.parseMoviesPreviwe(json: data);
+                moviesArray.forEach { movie in
+                    print(movie.releaseDate!);
+                    print(movie.posterPath!);
+                }
+                print(moviesArray.count);
             case .failure(let error):
                 print(error);
-            } } });
+            } } });*/
+        
+        
+        let movieProvider = MovieProvider()
+        
+        let movies = movieProvider.discoverMovies(page: 1, removePrevious: false)
+        movies!.forEach { movie in
+            print(movie.title!)
+            print(movie.releaseDate!)
+            print(movie.posterPath!)
+        }
     }
 
     override func didReceiveMemoryWarning() {
