@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		3C03A56A3CD77DAA9F70774B /* Pods_bestsourceofmoviesTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FA2A592F6A1744BF7B11A2AD /* Pods_bestsourceofmoviesTests.framework */; };
 		CF697FFABC918A6B43F36A4D /* Pods_bestsourceofmovies.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DBD01C7F51923F775B13D1C2 /* Pods_bestsourceofmovies.framework */; };
+		DD181214209F544400AD3CDF /* MainTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD181213209F544400AD3CDF /* MainTableViewController.swift */; };
+		DD181216209F545500AD3CDF /* SearchTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD181215209F545500AD3CDF /* SearchTableViewController.swift */; };
 		DD48DA22209708B300D63369 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD48DA21209708B300D63369 /* AppDelegate.swift */; };
 		DD48DA24209708B300D63369 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD48DA23209708B300D63369 /* ViewController.swift */; };
 		DD48DA27209708B300D63369 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DD48DA25209708B300D63369 /* Main.storyboard */; };
@@ -40,6 +42,8 @@
 		8AEAA95B2E88420CE633397E /* Pods-bestsourceofmoviesTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-bestsourceofmoviesTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-bestsourceofmoviesTests/Pods-bestsourceofmoviesTests.release.xcconfig"; sourceTree = "<group>"; };
 		CF4D958DFA9F40F7876A35C8 /* Pods-bestsourceofmoviesTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-bestsourceofmoviesTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-bestsourceofmoviesTests/Pods-bestsourceofmoviesTests.debug.xcconfig"; sourceTree = "<group>"; };
 		DBD01C7F51923F775B13D1C2 /* Pods_bestsourceofmovies.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_bestsourceofmovies.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		DD181213209F544400AD3CDF /* MainTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTableViewController.swift; sourceTree = "<group>"; };
+		DD181215209F545500AD3CDF /* SearchTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchTableViewController.swift; sourceTree = "<group>"; };
 		DD48DA1E209708B300D63369 /* bestsourceofmovies.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = bestsourceofmovies.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DD48DA21209708B300D63369 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		DD48DA23209708B300D63369 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -177,6 +181,8 @@
 			isa = PBXGroup;
 			children = (
 				DD48DA23209708B300D63369 /* ViewController.swift */,
+				DD181213209F544400AD3CDF /* MainTableViewController.swift */,
+				DD181215209F545500AD3CDF /* SearchTableViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -381,12 +387,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DD181214209F544400AD3CDF /* MainTableViewController.swift in Sources */,
 				DD48DA2A209708B300D63369 /* bestsourceofmovies.xcdatamodeld in Sources */,
 				DDCB107D20976D5C007D4D3B /* Movie.xcdatamodeld in Sources */,
 				DDCB108020977171007D4D3B /* MoviePreview+CoreDataClass.swift in Sources */,
 				DD48DA24209708B300D63369 /* ViewController.swift in Sources */,
 				DD48DA22209708B300D63369 /* AppDelegate.swift in Sources */,
 				DDCB108120977171007D4D3B /* MoviePreview+CoreDataProperties.swift in Sources */,
+				DD181216209F545500AD3CDF /* SearchTableViewController.swift in Sources */,
 				DDCB1083209875A5007D4D3B /* CoreDataManager.swift in Sources */,
 				DDCB107420971C14007D4D3B /* ApiClient.swift in Sources */,
 				DDCB107A20976739007D4D3B /* MovieParser.swift in Sources */,
