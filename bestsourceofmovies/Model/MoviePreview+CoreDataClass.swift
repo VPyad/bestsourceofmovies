@@ -9,13 +9,11 @@
 import Foundation
 import CoreData
 
-@objc(MoviePreview)
+//@objc(MoviePreview)
 public class MoviePreview: NSManagedObject {
     
-    /*class func create(in context: NSManagedObjectContext) throws -> MoviePreview {
-        let movies = MoviePreview(context: context)
-        return movies
-    }*/
+    class func create(in context: NSManagedObjectContext) {
+    }
 }
 
 struct MoviePreviewStruct {

@@ -23,7 +23,7 @@ final class CoreDataManager: CoreDataProtocol {
          application to it. This property is optional since there are legitimate
          error conditions that could cause the creation of the store to fail.
          */
-        let container = NSPersistentContainer(name: "Movies")
+        let container = NSPersistentContainer(name: "Movie")
         container.loadPersistentStores(completionHandler: { (storeDescription, error) in
             if let error = error as NSError? {
                 // Replace this implementation with code to handle the error appropriately.
@@ -73,23 +73,32 @@ final class CoreDataManager: CoreDataProtocol {
         return newsArray
     }
     
-    public func save(_ move: [MoviePreviewStruct], removePrevious: Bool) {
+    public func save(_ movie: [MoviePreviewStruct], removePrevious: Bool) {
+        print("calling save func..")
         if (removePrevious) {
+            print("removing prev data..")
             removeData()
+            print("prev data removed")
         }
         
-        for item in move {
+        print("entering movies loop..")
+        for item in movie {
+            print("initing MoviePreview model..")
             MoviePreview.init(with: item, in: context)
+            print("inited MoviePreview model..")
             do {
+                print("saving data..")
                 try saveContext()
+                print("saved")
             } catch let error as NSError {
+                print("an error occuried during save")
                 print("Could not save. \(error), \(error.userInfo)")
             }
         }
     }
     
     private func removeData() {
-        let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "Movies")
+        let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "MoviePreview")
         let deleteRequest = NSBatchDeleteRequest(fetchRequest: fetchRequest)
         
         do {

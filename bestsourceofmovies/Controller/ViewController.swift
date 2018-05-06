@@ -30,22 +30,58 @@ class ViewController: UIViewController {
                 print(error);
             } } });*/
         
-        
-        let movieProvider = MovieProvider()
-        
-        let movies = movieProvider.discoverMovies(page: 1, removePrevious: false)
-        movies!.forEach { movie in
-            print(movie.title!)
-            print(movie.releaseDate!)
-            print(movie.posterPath!)
-        }
+        searchMovies()
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-
-
+    
+    private func discoverMovies() {
+        let movieProvider = MovieProvider()
+        
+        movieProvider.discoverMovies(page: 1, removePrevious: false, completion: { result in
+            switch result {
+            case .success(let movies):
+                movies.forEach { movie in
+                    print(movie.title!)
+                    print(movie.releaseDate!)
+                    print(movie.posterPath!)
+                }
+            case .failure(let error):
+                print("error")
+            }
+        })
+    }
+    
+    private func loadMoviesFromCoreData() {
+        let movieProvider = MovieProvider()
+        
+        let movies = movieProvider.fetchMovies()
+        movies!.forEach { movie in
+            print(movie.title!)
+            print(movie.releaseDate!)
+            print(movie.posterPath!)
+        }
+        
+    }
+    
+    private func searchMovies() {
+        let movieProvider = MovieProvider()
+        
+        movieProvider.searchMovies(page: 1, q: "Iron man", completion: { result in
+            switch result {
+            case .success(let movies):
+                movies.forEach { movie in
+                    print(movie.title!)
+                    print(movie.releaseDate!)
+                    print(movie.posterPath!)
+                }
+            case .failure(let error):
+                print("error")
+            }
+        })
+    }
 }
 
