@@ -25,6 +25,9 @@
 		DDCB108120977171007D4D3B /* MoviePreview+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDCB107F20977171007D4D3B /* MoviePreview+CoreDataProperties.swift */; };
 		DDCB1083209875A5007D4D3B /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDCB1082209875A5007D4D3B /* CoreDataManager.swift */; };
 		DDCB108620988266007D4D3B /* MovieProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDCB108520988266007D4D3B /* MovieProvider.swift */; };
+		DDD14BAC20A8399A00D64823 /* MainMovieTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDD14BAA20A8399A00D64823 /* MainMovieTableViewCell.swift */; };
+		DDD14BAD20A8399A00D64823 /* MainMovieTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = DDD14BAB20A8399A00D64823 /* MainMovieTableViewCell.xib */; };
+		DDEDE9DF20A87B550090AE2E /* MoviePreviewUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDEDE9DE20A87B550090AE2E /* MoviePreviewUtil.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -62,6 +65,9 @@
 		DDCB107F20977171007D4D3B /* MoviePreview+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "MoviePreview+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		DDCB1082209875A5007D4D3B /* CoreDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataManager.swift; sourceTree = "<group>"; };
 		DDCB108520988266007D4D3B /* MovieProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieProvider.swift; sourceTree = "<group>"; };
+		DDD14BAA20A8399A00D64823 /* MainMovieTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainMovieTableViewCell.swift; sourceTree = "<group>"; };
+		DDD14BAB20A8399A00D64823 /* MainMovieTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MainMovieTableViewCell.xib; sourceTree = "<group>"; };
+		DDEDE9DE20A87B550090AE2E /* MoviePreviewUtil.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoviePreviewUtil.swift; sourceTree = "<group>"; };
 		DEC5DBA18DCCA8E2B554304D /* Pods-bestsourceofmovies.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-bestsourceofmovies.debug.xcconfig"; path = "Pods/Target Support Files/Pods-bestsourceofmovies/Pods-bestsourceofmovies.debug.xcconfig"; sourceTree = "<group>"; };
 		FA2A592F6A1744BF7B11A2AD /* Pods_bestsourceofmoviesTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_bestsourceofmoviesTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -129,6 +135,7 @@
 		DD48DA20209708B300D63369 /* bestsourceofmovies */ = {
 			isa = PBXGroup;
 			children = (
+				DDEDE9DD20A87B180090AE2E /* Utils */,
 				DDCB10842098824D007D4D3B /* Providers */,
 				DDCB10782097671E007D4D3B /* Parsers */,
 				DDCB107520972AC3007D4D3B /* Model */,
@@ -171,6 +178,7 @@
 		DDCB1070209717B8007D4D3B /* View */ = {
 			isa = PBXGroup;
 			children = (
+				DDD14BA920A838B900D64823 /* Main Movie cell */,
 				DD48DA25209708B300D63369 /* Main.storyboard */,
 				DD48DA2D209708B500D63369 /* LaunchScreen.storyboard */,
 			);
@@ -220,6 +228,23 @@
 				DDCB108520988266007D4D3B /* MovieProvider.swift */,
 			);
 			path = Providers;
+			sourceTree = "<group>";
+		};
+		DDD14BA920A838B900D64823 /* Main Movie cell */ = {
+			isa = PBXGroup;
+			children = (
+				DDD14BAA20A8399A00D64823 /* MainMovieTableViewCell.swift */,
+				DDD14BAB20A8399A00D64823 /* MainMovieTableViewCell.xib */,
+			);
+			path = "Main Movie cell";
+			sourceTree = "<group>";
+		};
+		DDEDE9DD20A87B180090AE2E /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				DDEDE9DE20A87B550090AE2E /* MoviePreviewUtil.swift */,
+			);
+			path = Utils;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -309,6 +334,7 @@
 				DD48DA2F209708B500D63369 /* LaunchScreen.storyboard in Resources */,
 				DD48DA2C209708B500D63369 /* Assets.xcassets in Resources */,
 				DD48DA27209708B300D63369 /* Main.storyboard in Resources */,
+				DDD14BAD20A8399A00D64823 /* MainMovieTableViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -348,12 +374,16 @@
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-bestsourceofmovies/Pods-bestsourceofmovies-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+				"${BUILT_PRODUCTS_DIR}/Kingfisher/Kingfisher.framework",
+				"${BUILT_PRODUCTS_DIR}/SDWebImage/SDWebImage.framework",
 				"${BUILT_PRODUCTS_DIR}/SwiftHTTP/SwiftHTTP.framework",
 				"${BUILT_PRODUCTS_DIR}/SwiftyJSON/SwiftyJSON.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Kingfisher.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SDWebImage.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftHTTP.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyJSON.framework",
 			);
@@ -388,9 +418,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				DD181214209F544400AD3CDF /* MainTableViewController.swift in Sources */,
+				DDD14BAC20A8399A00D64823 /* MainMovieTableViewCell.swift in Sources */,
 				DD48DA2A209708B300D63369 /* bestsourceofmovies.xcdatamodeld in Sources */,
 				DDCB107D20976D5C007D4D3B /* Movie.xcdatamodeld in Sources */,
 				DDCB108020977171007D4D3B /* MoviePreview+CoreDataClass.swift in Sources */,
+				DDEDE9DF20A87B550090AE2E /* MoviePreviewUtil.swift in Sources */,
 				DD48DA24209708B300D63369 /* ViewController.swift in Sources */,
 				DD48DA22209708B300D63369 /* AppDelegate.swift in Sources */,
 				DDCB108120977171007D4D3B /* MoviePreview+CoreDataProperties.swift in Sources */,
@@ -561,10 +593,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = bestsourceofmovies/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = vpyadukhov.bestsourceofmovies;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
@@ -579,10 +608,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = bestsourceofmovies/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = vpyadukhov.bestsourceofmovies;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
@@ -598,11 +624,7 @@
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = bestsourceofmoviesTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = vpyadukhov.bestsourceofmoviesTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
@@ -619,11 +641,7 @@
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = bestsourceofmoviesTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = vpyadukhov.bestsourceofmoviesTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;

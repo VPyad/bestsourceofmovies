@@ -23,7 +23,7 @@ class ApiClient {
     let apiKey = "6ccd72a2a8fc239b13f209408fc31c33";
     let discoverPath = "discover/movie";
     let searchPath = "search/movie";
-    public let baseImageUrl = "http://image.tmdb.org/t/p/w185";
+    public let baseImageUrl = "https://image.tmdb.org/t/p/w185";
     
     public func getPosterPath(path: String) -> String {
         let url = baseImageUrl + path;
